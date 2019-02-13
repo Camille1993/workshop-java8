@@ -15,12 +15,21 @@ import static org.junit.Assert.*;
 public class Method_01_Test {
 
     // tag::IDao[]
+	
     interface IDao {
+    	
         List<Person> findAll();
-
+        
         // TODO créer une méthode int sumAge()
         // TODO Cette méthode retourne le résultat de l'addition des ages des personnes
-    }
+    
+        default int sumAge(int addAge) {
+        for (Person p : findAll()){
+        	addAge = addAge+ p.getAge();
+        }
+        	return addAge;
+        	}	 	
+      }  
     // end::IDao[]
 
     class DaoA implements IDao {
@@ -47,10 +56,13 @@ public class Method_01_Test {
     public void test_daoA_sumAge() throws Exception {
 
         DaoA daoA = new DaoA();
-
+        
         // TODO invoquer la méthode sumAge pour que le test soit passant
-        int result = 0;
-
+       int result = 0; 
+       result = daoA.sumAge(result);
+        
+        
+        
         assertThat(result, is(210));
     }
 
@@ -58,10 +70,12 @@ public class Method_01_Test {
     public void test_daoB_sumAge() throws Exception {
 
         DaoB daoB = new DaoB();
-
-        // TODO invoquer la méthode sumAge pour que le test soit passant
+        
+         // TODO invoquer la méthode sumAge pour que le test soit passant
+        
+       
         int result = 0;
-
+        result = daoB.sumAge(result);
         assertThat(result, is(5050));
 
     }
