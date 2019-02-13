@@ -99,6 +99,7 @@ public class Function_01_Test {
     // tag::intToAccountWithAndThen[]
     // TODO Compléter la définition de cette fonction
     // TODO Utiliser la méthode andThen pour réutiliser les fonctions intToPerson et personToAccount
+    
     private Function<Integer, Account> intToAccountWithAndThen = intToPerson.andThen(personToAccount);
     // end::intToAccountWithAndThen[]
 
