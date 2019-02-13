@@ -34,11 +34,7 @@ public class Function_02_Test {
 
         // TODO invoquer la fonction buildAccount pour que le test soit passant
     	
-    	Person p = new Person();
-    	p.setFirstname("John");
-    	p.setLastname("France");
-    	p.setAge(80);
-    	p.setPassword("pass");
+    	Person p = new Person("john", "France", 80, "pass");
     	
         Account account = buildAccount.apply(p, 500);
 
