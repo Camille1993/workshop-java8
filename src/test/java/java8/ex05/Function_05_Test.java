@@ -44,9 +44,5 @@ public class Function_05_Test {
         // TODO Utiliser la méthode andThen pour chaîner les vérifications verifyAge et verifyPassword
         // personList.forEach...
         personList.forEach(verifyAge.andThen(verifyPassword)); 
-        /*for(Person p : personList) {
-            verifyAge.accept(p);
-            verifyPassword.accept(p);
-        }*/
     }
 }
